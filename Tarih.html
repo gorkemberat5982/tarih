@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tarihî Eserleri Keşfet</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4eee3;
+    color:#2a2119;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:linear-gradient(135deg,#20160d,#5d4228);
+    color:white;
+    padding:38px 6%;
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    font-family:Georgia,serif;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.header-tag{
+    color:#e5bd68;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.hero{
+    max-width:1000px;
+    margin:55px auto 20px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(42px,7vw,75px);
+    line-height:1;
+    margin:0 0 20px;
+}
+
+.hero p{
+    color:#e5d9ca;
+    max-width:750px;
+    line-height:1.7;
+    font-size:17px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+    max-width:1250px;
+    margin:auto;
+    padding:30px 20px 70px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-area{
+    display:flex;
+    gap:12px;
+    margin-bottom:35px;
+}
+
+#search{
+    width:100%;
+    padding:17px;
+    border-radius:12px;
+    border:1px solid #d3c1a8;
+    background:#fffaf2;
+    font-size:15px;
+    outline:none;
+}
+
+#search:focus{
+    border-color:#a77435;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section-title{
+    font-family:Georgia,serif;
+    font-size:36px;
+    margin:25px 0 8px;
+}
+
+.section-description{
+    color:#6d5d4d;
+    margin-bottom:25px;
+    line-height:1.6;
+}
+
+
+/* =========================
+   ÖNE ÇIKAN 6
+========================= */
+
+.featured-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    margin-bottom:65px;
+}
+
+.featured-card{
+    background:#fffaf1;
+    border:1px solid #dccbb4;
+    border-radius:20px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+    box-shadow:0 8px 25px rgba(55,39,20,.08);
+}
+
+.featured-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 18px 40px rgba(55,39,20,.18);
+}
+
+.featured-image{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    display:block;
+    background:#d8c9b5;
+}
+
+.featured-content{
+    padding:20px;
+}
+
+.featured-content h3{
+    font-family:Georgia,serif;
+    font-size:24px;
+    margin:0 0 8px;
+}
+
+.featured-city{
+    color:#a77435;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.featured-category{
+    margin-top:10px;
+    color:#716253;
+    font-size:13px;
+}
+
+
+/* =========================
+   DİĞER ESERLER
+========================= */
+
+.other-section{
+    margin-top:20px;
+}
+
+.other-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.other-card{
+    background:#fffaf1;
+    border:1px solid #dccbb4;
+    border-radius:16px;
+    padding:20px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.other-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(55,39,20,.13);
+}
+
+.other-card h3{
+    font-family:Georgia,serif;
+    margin:0 0 8px;
+    font-size:20px;
+}
+
+.other-card p{
+    margin:0;
+    color:#8e612e;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.other-category{
+    margin-top:8px;
+    color:#76685b;
+    font-size:12px;
+}
+
+
+/* =========================
+   DETAY SAYFASI
+========================= */
+
+.detail{
+    display:none;
+}
+
+.detail.active{
+    display:block;
+}
+
+.home-page.hidden{
+    display:none;
+}
+
+.back{
+    border:0;
+    background:#2d2117;
+    color:white;
+    padding:13px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.detail-container{
+    background:#fffaf1;
+    border-radius:25px;
+    overflow:hidden;
+    border:1px solid #dccbb4;
+    box-shadow:0 15px 45px rgba(55,39,20,.12);
+}
+
+.detail-image{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    display:block;
+    background:#d8c9b5;
+}
+
+.detail-head{
+    background:linear-gradient(135deg,#251a10,#6b4b2c);
+    color:white;
+    padding:55px 7%;
+}
+
+.detail-category{
+    color:#e7bf68;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.detail-head h1{
+    font-family:Georgia,serif;
+    font-size:clamp(38px,6vw,65px);
+    margin:12px 0;
+}
+
+.detail-head p{
+    color:#eadfd3;
+    font-size:17px;
+}
+
+.detail-body{
+    padding:40px 7%;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-bottom:35px;
+}
+
+.info-box{
+    padding:20px;
+    border-radius:15px;
+    background:#f3e9d8;
+}
+
+.info-box strong{
+    display:block;
+    color:#8e612e;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:7px;
+}
+
+.detail-body h2{
+    font-family:Georgia,serif;
+    font-size:30px;
+}
+
+.detail-body p{
+    line-height:1.8;
+    color:#55483c;
+    font-size:16px;
+}
+
+.location-link{
+    display:inline-block;
+    margin-top:10px;
+    padding:12px 17px;
+    border-radius:9px;
+    background:#a77435;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#776a5c;
+    font-size:13px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px){
+
+    .featured-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .other-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+/* =========================
+   TELEFON
+========================= */
+
+@media(max-width:600px){
+
+    .header-top{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .featured-grid{
+        grid-template-columns:1fr;
+    }
+
+    .other-grid{
+        grid-template-columns:1fr;
+    }
+
+    .detail-image{
+        height:280px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="header-top">
+
+        <div class="logo">
+            🏛️ Tarihî Eserleri Keşfet
+        </div>
+
+        <div class="header-tag">
+            Tarih Bilinci • Kültürel Miras
+        </div>
+
+    </div>
+
+
+    <div class="hero">
+
+        <h1>
+            Türkiye'nin Tarihini Keşfet
+        </h1>
+
+        <p>
+            Anadolu'nun binlerce yıllık tarihine yolculuk yap.
+            Türkiye'nin en önemli tarihî eserlerini ve kültürel
+            miras alanlarını keşfet.
+        </p>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     ANA SAYFA
+===================================================== -->
+
+<section
+    id="homePage"
+    class="home-page"
+>
+
+
+    <!-- ARAMA -->
+
+    <div class="search-area">
+
+        <input
+            id="search"
+            type="text"
+            placeholder="🔎 Tarihî eser veya şehir ara..."
+        >
+
+    </div>
+
+
+
+    <!-- =================================================
+         ÖNE ÇIKAN 6 ESER
+    ================================================= -->
+
+    <h2 class="section-title">
+        Öne Çıkan 6 Tarihî Eser
+    </h2>
+
+    <p class="section-description">
+        Türkiye'nin en ünlü ve dikkat çekici tarihî
+        miraslarından altı tanesini keşfet.
+    </p>
+
+
+    <div
+        id="featuredGrid"
+        class="featured-grid"
+    >
+    </div>
+
+
+
+    <!-- =================================================
+         DİĞER ESERLER
+    ================================================= -->
+
+    <section class="other-section">
+
+        <h2 class="section-title">
+            Diğer Tarihî Eserler
+        </h2>
+
+        <p class="section-description">
+            Türkiye'nin farklı bölgelerinden diğer önemli
+            tarihî ve kültürel miras alanlarını incele.
+        </p>
+
+
+        <div
+            id="otherGrid"
+            class="other-grid"
+        >
+        </div>
+
+    </section>
+
+</section>
+
+
+
+<!-- =====================================================
+     DETAY SAYFASI
+===================================================== -->
+
+<section
+    id="detailPage"
+    class="detail"
+>
+
+
+    <button
+        class="back"
+        onclick="showHome()"
+    >
+        ← Eserlere Dön
+    </button>
+
+
+    <div class="detail-container">
+
+
+        <img
+            id="detailImage"
+            class="detail-image"
+            src=""
+            alt=""
+        >
+
+
+        <div class="detail-head">
+
+            <div
+                id="detailCategory"
+                class="detail-category"
+            >
+            </div>
+
+
+            <h1 id="detailName"></h1>
+
+
+            <p id="detailCity"></p>
+
+        </div>
+
+
+
+        <div class="detail-body">
+
+
+            <div class="info-grid">
+
+
+                <div class="info-box">
+
+                    <strong>
+                        Konum
+                    </strong>
+
+                    <span id="detailLocation"></span>
+
+                </div>
+
+
+
+                <div class="info-box">
+
+                    <strong>
+                        UNESCO Durumu
+                    </strong>
+
+                    <span id="detailUNESCO"></span>
+
+                </div>
+
+
+
+                <div class="info-box">
+
+                    <strong>
+                        Listeye Alınma Yılı
+                    </strong>
+
+                    <span id="detailYear"></span>
+
+                </div>
+
+
+
+                <div class="info-box">
+
+                    <strong>
+                        Koordinatlar
+                    </strong>
+
+                    <span id="detailCoords"></span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <h2>
+                Tarihçesi
+            </h2>
+
+            <p id="detailHistory"></p>
+
+
+
+            <h2>
+                Neden Önemli?
+            </h2>
+
+            <p id="detailImportance"></p>
+
+
+
+            <h2>
+                Konum
+            </h2>
+
+            <p>
+                Bu eserin gerçek konumunu Google Haritalar
+                üzerinde inceleyebilir ve yol tarifi alabilirsin.
+            </p>
+
+
+            <a
+                id="mapsLink"
+                class="location-link"
+                target="_blank"
+            >
+                📍 Haritalarda Aç
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+    9/D • Görkem Berat Kıyıpınar • Tarih Sunumuna Özel
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   TARİHÎ ESERLER
+===================================================== */
+
+const eserler = [
+
+
+/* =====================================================
+   1 - GÖBEKLİTEPE
+===================================================== */
+
+{
+    name:"Göbeklitepe",
+    city:"Şanlıurfa",
+    category:"Arkeolojik Alan",
+
+    image:
+    "https://commons.wikimedia.org/wiki/Special:FilePath/G%C3%B6bekli%20Tepe%20(5).jpg",
+
+    year:"2018",
+
+    unesco:
+    "Dünya Mirası Listesi",
+
+    lat:37.223242,
+    lng:38.922364,
+
+    history:
+    "Göbeklitepe, yaklaşık MÖ 9600–8200 yılları arasına tarihlenen ve Neolitik döneme ait anıtsal yapılardan oluşan önemli bir arkeolojik alandır. Alanın merkezinde T biçimli büyük dikilitaşların bulunduğu dairesel ve oval yapılar yer alır.",
+
+    importance:
+    "Göbeklitepe, avcı-toplayıcı toplulukların anıtsal yapılar inşa edebildiğini göstermesi bakımından tarih ve arkeoloji açısından büyük önem taşır. İnsanlık tarihinin yerleşik yaşama geçiş sürecini anlamamıza yardımcı olur."
+},
+
+
+
+/* =====================================================
+   2 - EFES
+===================================================== */
+
+{
+    name:"Efes",
+    city:"İzmir",
+    category:"Antik Kent",
+
+    image:
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Library%20of%20Celsus.jpg",
+
+    year:"2015",
+
+    unesco:
+    "Dünya Mirası Listesi",
+
+    lat:37.939389,
+    lng:27.341611,
+
+    history:
+    "Efes, Batı Anadolu'nun en önemli antik kentlerinden biridir. Kent, özellikle Helenistik ve Roma dönemlerinde büyük bir ekonomik, siyasi ve kültürel merkez hâline gelmiştir.",
+
+    importance:
+    "Celsus Kütüphanesi, Büyük Tiyatro ve Artemision gibi yapılarıyla antik dünyanın önemli merkezlerinden biri olan Efes, Anadolu'nun Akdeniz dünyasıyla ilişkilerini anlamak açısından değerlidir."
+},
+
+
+
+/* =====================================================
+   3 - PAMUKKALE
+===================================================== */
+
+{
+    name:"Pamukkale",
+    city:"Denizli",
+    category:"Doğal ve Kültürel Miras",
+
+    image:
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Pamukkale.jpg",
+
+    year:"1988",
+
+    unesco:
+    "Dünya Mirası Listesi",
+
+    lat:37.9236,
+    lng:29.1244,
+
+    history:
+    "Pamukkale, sıcak su kaynaklarının oluşturduğu beyaz travertenleriyle tanınır. Travertenlerin hemen yanında antik Hierapolis kenti bulunmaktadır.",
+
+    importance:
+    "Doğal traverten oluşumları ile antik Hierapolis kentinin aynı alanda bulunması Pamukkale'yi Türkiye'nin en önemli doğal ve kültürel miras alanlarından biri hâline getirir."
+},
+
+
+
+/* =====================================================
+   4 - AYASOFYA
+===================================================== */
+
+{
+    name:"Ayasofya",
+    city:"İstanbul",
+    category:"Tarihî Yapı",
+
+    image:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Hagia_Sophia_Mars_2013.jpg/1280px-Hagia_Sophia_Mars_2013.jpg",
+
+    year:"1985",
+
+    unesco:
+    "İstanbul'un Tarihî Alanları",
+
+    lat:41.0086,
+    lng:28.9802,
+
+    history:
+    "Ayasofya, İstanbul'un tarihî yarımadasında yer alan ve yüzyıllar boyunca farklı medeniyetlere hizmet etmiş anıtsal bir yapıdır. Günümüzde İstanbul'un en önemli tarihî yapılarından biridir.",
+
+    importance:
+    "Büyük kubbesi, mimarisi ve tarih boyunca farklı işlevler üstlenmesi nedeniyle dünya mimarlık tarihinin en önemli yapılarından biridir."
+},
+
+
+
+/* =====================================================
+   5 - KAPADOKYA
+===================================================== */
+
+{
+    name:"Kapadokya",
+    city:"Nevşehir",
+    category:"Kültürel Peyzaj",
+
+    image:
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Cappadocia%20.JPG",
+
+    year:"1985",
+
+    unesco:
+    "Dünya Mirası Listesi",
+
+    lat:38.6689,
+    lng:34.8450,
+
+    history:
+    "Kapadokya, volkanik kayaçların uzun zaman boyunca aşınmasıyla oluşan peribacaları ve kayalara oyulmuş yerleşimleriyle bilinir.",
+
+    importance:
+    "Doğal oluşumlar ile insan eliyle oluşturulan kilise, manastır ve yeraltı yerleşimlerinin birlikte bulunması bölgeyi eşsiz kılar."
+},
+
+
+
+/* =====================================================
+   6 - NEMRUT DAĞI
+===================================================== */
+
+{
+    name:"Nemrut Dağı",
+    city:"Adıyaman",
+    category:"Anıt",
+
+    image:
+    "https://commons.wikimedia.org/wiki/Special:FilePath/Nemrud%20(2).jpg",
+
+    year:"1987",
+
+    unesco:
+    "Dünya Mirası Listesi",
+
+    lat:37.980556,
+    lng:38.740833,
+
+    history:
+    "Nemrut Dağı'nın zirvesinde Kommagene Kralı I. Antiochos dönemine ait anıtsal heykeller ve tümülüs bulunmaktadır.",
+
+    importance:
+    "Dev tanrı ve kral heykelleri, Kommagene Krallığı'nın kültürel ve siyasi dünyasını yansıtır. Alan özellikle anıtsal heykel gruplarıyla tanınır."
+},
+
+
+
+/* =====================================================
+   7 - TROYA
+===================================================== */
+
+{
+    name:"Troya",
+    city:"Çanakkale",
+    category:"Arkeolojik Alan",
+
+    year:"1998",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:39.95644,
+    lng:26.238999,
+
+    history:
+    "Troya, Çanakkale'nin Hisarlık bölgesinde bulunan çok katmanlı bir arkeolojik alandır. Bölgede farklı dönemlere ait yerleşim kalıntıları bulunmaktadır.",
+
+    importance:
+    "Troya, Homeros'un İlyada destanıyla ilişkilendirilmesi ve uzun süreli yerleşim geçmişi nedeniyle hem arkeoloji hem de dünya kültür tarihi açısından önemlidir."
+},
+
+
+
+/* =====================================================
+   8 - HATTUŞA
+===================================================== */
+
+{
+    name:"Hattuşa",
+    city:"Çorum",
+    category:"Arkeolojik Alan",
+
+    year:"1986",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:40.019444,
+    lng:34.615278,
+
+    history:
+    "Hattuşa, Hitit İmparatorluğu'nun başkentiydi. Şehirde tapınaklar, saraylar, surlar ve anıtsal kapılar bulunmaktadır.",
+
+    importance:
+    "Hattuşa, Hitit uygarlığının siyasi ve kültürel merkezini temsil eder. Anadolu'nun MÖ 2. binyıl tarihini anlamak için temel arkeolojik alanlardan biridir."
+},
+
+
+
+/* =====================================================
+   9 - SAFRANBOLU
+===================================================== */
+
+{
+    name:"Safranbolu",
+    city:"Karabük",
+    category:"Tarihî Kent",
+
+    year:"1994",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:41.2508,
+    lng:32.6944,
+
+    history:
+    "Safranbolu, Osmanlı döneminden kalan geleneksel şehir dokusunu büyük ölçüde koruyan tarihî bir yerleşimdir.",
+
+    importance:
+    "Geleneksel Türk evleri, sokakları, hanları ve şehir planıyla Osmanlı şehir yaşamının önemli örneklerinden biridir."
+},
+
+
+
+/* =====================================================
+   10 - DİVRİĞİ
+===================================================== */
+
+{
+    name:"Divriği Ulu Camii ve Darüşşifası",
+    city:"Sivas",
+    category:"Anıt Yapı",
+
+    year:"1985",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:39.3717,
+    lng:38.1186,
+
+    history:
+    "Divriği Ulu Camii ve Darüşşifası, Mengücekli döneminde 13. yüzyılda inşa edilmiştir. Yapının özellikle taş işçiliği son derece dikkat çekicidir.",
+
+    importance:
+    "Anıtsal kapılarındaki özgün taş süslemeleri ve mimari tasarımı nedeniyle Anadolu'nun önemli ortaçağ eserlerinden biridir."
+},
+
+
+
+/* =====================================================
+   11 - XANTHOS
+===================================================== */
+
+{
+    name:"Xanthos-Letoon",
+    city:"Antalya / Muğla",
+    category:"Arkeolojik Alan",
+
+    year:"1988",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:36.3562,
+    lng:29.3186,
+
+    history:
+    "Xanthos ve Letoon, Likya uygarlığının önemli merkezleri arasında yer alır.",
+
+    importance:
+    "Likya kültürü, dini yaşamı ve siyasi yapısı hakkında önemli bilgiler veren arkeolojik kalıntılara sahiptir."
+},
+
+
+
+/* =====================================================
+   12 - ANİ
+===================================================== */
+
+{
+    name:"Ani",
+    city:"Kars",
+    category:"Arkeolojik Alan",
+
+    year:"2016",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:40.5000,
+    lng:43.5667,
+
+    history:
+    "Ani, Orta Çağ'da önemli bir şehir merkezi olmuş, farklı kültürlerin ve devletlerin etkisi altında gelişmiştir.",
+
+    importance:
+    "Katedrali, kiliseleri, surları ve diğer kalıntıları Orta Çağ Anadolu'sunun kültürel çeşitliliğini yansıtır."
+},
+
+
+
+/* =====================================================
+   13 - APHRODİSİAS
+===================================================== */
+
+{
+    name:"Aphrodisias",
+    city:"Aydın",
+    category:"Antik Kent",
+
+    year:"2017",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:37.708333,
+    lng:28.723611,
+
+    history:
+    "Aphrodisias, özellikle Afrodit kültü ve mermer heykeltıraşlığıyla tanınan önemli bir antik kenttir.",
+
+    importance:
+    "Kentteki mermer ocakları ve gelişmiş heykeltıraşlık geleneği, Roma dönemindeki sanat üretimi hakkında önemli bilgiler verir."
+},
+
+
+
+/* =====================================================
+   14 - PERGAMON
+===================================================== */
+
+{
+    name:"Pergamon",
+    city:"İzmir",
+    category:"Antik Kent",
+
+    year:"2014",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:39.125833,
+    lng:27.180000,
+
+    history:
+    "Pergamon, Helenistik dönemde önemli bir krallığın başkenti olmuş ve daha sonra Roma döneminde gelişimini sürdürmüştür.",
+
+    importance:
+    "Akropolü, tiyatrosu, tapınakları ve antik şehir planı ile Helenistik ve Roma dönemlerinin önemli kültürel merkezlerinden biridir."
+},
+
+
+
+/* =====================================================
+   15 - ÇATALHÖYÜK
+===================================================== */
+
+{
+    name:"Çatalhöyük",
+    city:"Konya",
+    category:"Neolitik Yerleşim",
+
+    year:"2012",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:37.666667,
+    lng:32.828333,
+
+    history:
+    "Çatalhöyük, Neolitik döneme ait büyük bir yerleşim alanıdır. Evlerin birbirine bitişik biçimde düzenlenmesi dikkat çekicidir.",
+
+    importance:
+    "Yerleşik yaşamın, toplum yapısının ve erken tarım topluluklarının anlaşılması açısından önemli arkeolojik veriler sunar."
+},
+
+
+
+/* =====================================================
+   16 - GORDİON
+===================================================== */
+
+{
+    name:"Gordion",
+    city:"Ankara",
+    category:"Arkeolojik Alan",
+
+    year:"2023",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:39.6497,
+    lng:31.9961,
+
+    history:
+    "Gordion, Frig uygarlığının siyasi ve kültürel merkezlerinden biri olarak bilinir.",
+
+    importance:
+    "Friglerin Anadolu'daki yaşamı, mimarisi ve mezar gelenekleri hakkında önemli bilgiler sunar."
+},
+
+
+
+/* =====================================================
+   17 - SARDES
+===================================================== */
+
+{
+    name:"Sardes",
+    city:"Manisa",
+    category:"Arkeolojik Alan",
+
+    year:"2025",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:38.4889,
+    lng:28.0417,
+
+    history:
+    "Sardes, Lidya Krallığı'nın başkenti olarak bilinen önemli bir antik merkezdir.",
+
+    importance:
+    "Lidya uygarlığının siyasi ve ekonomik tarihinde önemli bir yere sahip olan kent, antik çağdaki ticaret ve şehirleşmeyi anlamak açısından değerlidir."
+},
+
+
+
+/* =====================================================
+   18 - BURSA
+===================================================== */
+
+{
+    name:"Bursa ve Cumalıkızık",
+    city:"Bursa",
+    category:"Tarihî Kent",
+
+    year:"2014",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:40.1826,
+    lng:29.0665,
+
+    history:
+    "Bursa ve Cumalıkızık, Osmanlı Devleti'nin kuruluş ve gelişim dönemini yansıtan tarihî yerleşim alanlarıdır.",
+
+    importance:
+    "Osmanlı şehirleşmesi, mimarisi ve vakıf kültürü hakkında önemli örnekler sunar."
+},
+
+
+
+/* =====================================================
+   19 - DİYARBAKIR
+===================================================== */
+
+{
+    name:"Diyarbakır Kalesi ve Hevsel Bahçeleri",
+    city:"Diyarbakır",
+    category:"Kültürel Peyzaj",
+
+    year:"2015",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:37.9144,
+    lng:40.2306,
+
+    history:
+    "Diyarbakır surları ve Hevsel Bahçeleri, kentin tarihî savunma sistemi ile Dicle Nehri çevresindeki tarımsal peyzajı birlikte temsil eder.",
+
+    importance:
+    "Şehir surları ve bahçelerin birlikte oluşturduğu kültürel peyzaj, Diyarbakır'ın uzun tarihsel gelişimini yansıtır."
+},
+
+
+
+/* =====================================================
+   20 - SELİMİYE
+===================================================== */
+
+{
+    name:"Selimiye Camii",
+    city:"Edirne",
+    category:"Anıt Yapı",
+
+    year:"2011",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:41.6781,
+    lng:26.5589,
+
+    history:
+    "Selimiye Camii, Mimar Sinan tarafından II. Selim adına 16. yüzyılda Edirne'de inşa edilmiştir.",
+
+    importance:
+    "Büyük kubbesi, minareleri ve mimari düzeniyle Osmanlı klasik dönem mimarisinin en önemli eserlerinden biridir."
+},
+
+
+
+/* =====================================================
+   21 - ARSLANTEPE
+===================================================== */
+
+{
+    name:"Arslantepe Höyüğü",
+    city:"Malatya",
+    category:"Arkeolojik Alan",
+
+    year:"2021",
+    unesco:"Dünya Mirası Listesi",
+
+    lat:38.3767,
+    lng:38.3758,
+
+    history:
+    "Arslantepe, Malatya yakınlarında bulunan ve çok uzun bir yerleşim geçmişine sahip önemli bir arkeolojik alandır.",
+
+    importance:
+    "Erken devlet yapılanmaları, yönetim ve sosyal örgütlenmenin gelişimi hakkında önemli bulgular sunmaktadır."
+},
+
+
+
+/* =====================================================
+   22 - SÜMELA
+===================================================== */
+
+{
+    name:"Sümela Manastırı",
+    city:"Trabzon",
+    category:"Tarihî Yapı",
+
+    year:"Kültürel Miras Alanı",
+    unesco:"UNESCO Geçici Liste",
+
+    lat:40.6903,
+    lng:39.6583,
+
+    history:
+    "Sümela Manastırı, Trabzon'un Maçka ilçesindeki sarp kayalıklar üzerine kurulmuş tarihî bir manastır kompleksidir.",
+
+    importance:
+    "Konumu, mimarisi ve uzun tarihsel geçmişi nedeniyle Anadolu'nun en dikkat çekici tarihî yapılarından biridir."
+}
+
+];
+
+
+
+/* =====================================================
+   ÖNE ÇIKANLAR
+===================================================== */
+
+const featuredNames = [
+
+    "Göbeklitepe",
+    "Efes",
+    "Pamukkale",
+    "Ayasofya",
+    "Kapadokya",
+    "Nemrut Dağı"
+
+];
+
+
+
+/* =====================================================
+   GÖRSEL YEDEĞİ
+===================================================== */
+
+const fallbackImage =
+"https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Hagia_Sophia_Mars_2013.jpg/1280px-Hagia_Sophia_Mars_2013.jpg";
+
+
+
+/* =====================================================
+   GÖRSEL HATASI KONTROLÜ
+===================================================== */
+
+function imageError(img){
+
+    if(img.dataset.fallback === "1"){
+        return;
+    }
+
+    img.dataset.fallback = "1";
+
+    img.src = fallbackImage;
+
+}
+
+
+
+/* =====================================================
+   ÖNE ÇIKAN KART
+===================================================== */
+
+function kartOlustur(eser){
+
+    return `
+
+        <div
+            class="featured-card"
+            onclick="detayAc('${eser.name}')"
+        >
+
+            <img
+                class="featured-image"
+                src="${eser.image}"
+                alt="${eser.name}"
+                loading="lazy"
+                onerror="imageError(this)"
+            >
+
+            <div class="featured-content">
+
+                <h3>
+                    ${eser.name}
+                </h3>
+
+                <div class="featured-city">
+                    📍 ${eser.city}
+                </div>
+
+                <div class="featured-category">
+                    ${eser.category}
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =====================================================
+   DİĞER ESER KARTI
+===================================================== */
+
+function digerKartOlustur(eser){
+
+    return `
+
+        <div
+            class="other-card"
+            onclick="detayAc('${eser.name}')"
+        >
+
+            <h3>
+                ${eser.name}
+            </h3>
+
+            <p>
+                📍 ${eser.city}
+            </p>
+
+            <div class="other-category">
+                ${eser.category}
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =====================================================
+   ANA SAYFAYI OLUŞTUR
+===================================================== */
+
+function anaSayfayiOlustur(liste=eserler){
+
+    const featuredGrid =
+        document.getElementById(
+            "featuredGrid"
+        );
+
+    const otherGrid =
+        document.getElementById(
+            "otherGrid"
+        );
+
+
+    const featured =
+        liste.filter(
+            eser =>
+            featuredNames.includes(eser.name)
+        );
+
+
+    const others =
+        liste.filter(
+            eser =>
+            !featuredNames.includes(eser.name)
+        );
+
+
+    featuredGrid.innerHTML =
+        featured
+        .map(
+            eser =>
+            kartOlustur(eser)
+        )
+        .join("");
+
+
+    otherGrid.innerHTML =
+        others
+        .map(
+            eser =>
+            digerKartOlustur(eser)
+        )
+        .join("");
+
+}
+
+
+
+/* =====================================================
+   BAŞLANGIÇ
+===================================================== */
+
+anaSayfayiOlustur();
+
+
+
+/* =====================================================
+   DETAY SAYFASI
+===================================================== */
+
+function detayAc(eserAdi){
+
+    const eser =
+        eserler.find(
+            eser =>
+            eser.name === eserAdi
+        );
+
+
+    if(!eser){
+        return;
+    }
+
+
+    document
+        .getElementById("homePage")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("detailPage")
+        .classList
+        .add("active");
+
+
+
+    const detailImage =
+        document.getElementById(
+            "detailImage"
+        );
+
+
+    if(eser.image){
+
+        detailImage.src =
+            eser.image;
+
+        detailImage.style.display =
+            "block";
+
+    }else{
+
+        detailImage.style.display =
+            "none";
+
+    }
+
+
+    detailImage.alt =
+        eser.name;
+
+
+
+    document
+        .getElementById("detailCategory")
+        .textContent =
+        eser.category;
+
+
+    document
+        .getElementById("detailName")
+        .textContent =
+        eser.name;
+
+
+    document
+        .getElementById("detailCity")
+        .textContent =
+        "📍 " + eser.city;
+
+
+    document
+        .getElementById("detailLocation")
+        .textContent =
+        eser.city;
+
+
+    document
+        .getElementById("detailUNESCO")
+        .textContent =
+        eser.unesco;
+
+
+    document
+        .getElementById("detailYear")
+        .textContent =
+        eser.year;
+
+
+    document
+        .getElementById("detailCoords")
+        .textContent =
+        eser.lat.toFixed(6) +
+        "° N, " +
+        eser.lng.toFixed(6) +
+        "° E";
+
+
+    document
+        .getElementById("detailHistory")
+        .textContent =
+        eser.history;
+
+
+    document
+        .getElementById("detailImportance")
+        .textContent =
+        eser.importance;
+
+
+    document
+        .getElementById("mapsLink")
+        .href =
+        "https://www.google.com/maps/search/?api=1&query=" +
+        eser.lat +
+        "," +
+        eser.lng;
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+
+/* =====================================================
+   ANA SAYFAYA DÖN
+===================================================== */
+
+function showHome(){
+
+    document
+        .getElementById("detailPage")
+        .classList
+        .remove("active");
+
+
+    document
+        .getElementById("homePage")
+        .classList
+        .remove("hidden");
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+
+/* =====================================================
+   ARAMA
+===================================================== */
+
+document
+    .getElementById("search")
+    .addEventListener(
+        "input",
+        function(){
+
+            const q =
+                this.value
+                .toLocaleLowerCase("tr-TR")
+                .trim();
+
+
+            if(q === ""){
+
+                anaSayfayiOlustur();
+
+                return;
+
+            }
+
+
+            const sonuc =
+                eserler.filter(
+                    eser => {
+
+                        return (
+
+                            eser.name
+                            .toLocaleLowerCase("tr-TR")
+                            .includes(q)
+
+                            ||
+
+                            eser.city
+                            .toLocaleLowerCase("tr-TR")
+                            .includes(q)
+
+                            ||
+
+                            eser.category
+                            .toLocaleLowerCase("tr-TR")
+                            .includes(q)
+
+                        );
+
+                    }
+                );
+
+
+            const featuredGrid =
+                document.getElementById(
+                    "featuredGrid"
+                );
+
+
+            const otherGrid =
+                document.getElementById(
+                    "otherGrid"
+                );
+
+
+            featuredGrid.innerHTML = "";
+
+            otherGrid.innerHTML = "";
+
+
+            if(sonuc.length === 0){
+
+                otherGrid.innerHTML = `
+
+                    <div
+                        style="
+                        grid-column:1/-1;
+                        padding:30px;
+                        background:#fffaf1;
+                        border-radius:15px;
+                        text-align:center;
+                        color:#776a5c;
+                        "
+                    >
+
+                        🔎 Aradığın eser bulunamadı.
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            sonuc.forEach(
+                eser => {
+
+                    if(
+                        featuredNames
+                        .includes(eser.name)
+                    ){
+
+                        featuredGrid.innerHTML +=
+                            kartOlustur(eser);
+
+                    }else{
+
+                        otherGrid.innerHTML +=
+                            digerKartOlustur(eser);
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
